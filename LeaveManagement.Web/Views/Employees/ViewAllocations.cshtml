@@ -58,12 +58,12 @@
                 <div class="row">
                     <div class="col"><h6>@allocation.LeaveType.Name</h6></div>
                     <div class="col">
-                        <button type="button" class="btn btn-primary">Allocated Days<span class="badge bg-secondary">@allocation.LeaveType.DefaultDays</span>
+                        <button type="button" class="btn btn-primary">Allocated Days <span class="badge bg-secondary">@allocation.LeaveType.DefaultDays</span>
                             </button>
                             </div>
                     <div class="col">
                         <button type="button" class="btn btn-primary">
-                            Remaining Days<span class="badge bg-secondary">@allocation.NumberOfDays</span>
+                            Remaining Days <span class="badge bg-secondary">@allocation.NumberOfDays</span>
                         </button>
                     </div>
                     <div class="col"><a class="btn btn-warning" asp-action="EditAllocation" asp-route-id="@allocation.Id">Edit Allocation <i class="fas fa-pencil-alt"></i></a></div>
@@ -75,6 +75,7 @@
 
     </ul>
 </div>
+</br>
 <div>
     <a asp-action="Index" class="btn btn-dark">Back to List</a> &nbsp;
 </div>
