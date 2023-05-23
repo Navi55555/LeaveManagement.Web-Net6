@@ -30,7 +30,7 @@ namespace LeaveManagement.Web.Repositories
             return await context.LeaveAllocations.AnyAsync(q => q.EmployeeId == employeeId && q.LeaveTypeId == leaveTypeId && q.Period == period);
         }
 
-        public async Task<EmployeeAllocationVM> GetEmployeeAllocation(string employeeId)
+        public async Task<EmployeeAllocationVM> GetEmployeeAllocations(string employeeId)
         {
             var allocations = await context.LeaveAllocations
                 .Include(q => q.LeaveType)
@@ -101,6 +101,11 @@ namespace LeaveManagement.Web.Repositories
             await UpdateAsync(leaveAllocation);
 
             return true;
+        }
+
+        public async Task<LeaveAllocation?> GetEmployeeAllocation(string employeeId, int leaveTypeId)
+        {
+            return await context.LeaveAllocations.FirstOrDefaultAsync(q => q.EmployeeId == employeeId && q.LeaveTypeId == leaveTypeId);
         }
     }
 }
