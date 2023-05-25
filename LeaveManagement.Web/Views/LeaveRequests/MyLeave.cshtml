@@ -104,8 +104,8 @@
                 <td>
                     @if (item.Approved == null)
                     {
-                        <form>
-                            <input asp-form="@item.Id" type="hidden" />
+                        <form asp-action="Cancel">
+                            <input asp-for="@item.Id" type="hidden" name="Id" />
                             <button type="submit" class="btn btn-danger btn-sm">Cancel Request</button>
                         </form>
                     }
